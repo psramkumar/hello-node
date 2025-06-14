@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node .",
-    "preinstall": "rm index.js",
+    "preinstall": "[ -f index.js ] && rm index.js"
     "postinstall": "echo \"require('http').createServer(require('express')().get('/', function(r, p){p.send('Hello World')})).listen(Number(process.env.npm_package_config_port), function(){console.info('App Started Successfully')});\" > index.js"
   },
   "dependencies": {
